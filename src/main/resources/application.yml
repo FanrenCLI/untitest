@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Spring-boot-demo
+#freefire:
+#  scanpath : com.example.freefire.Service.impl1
