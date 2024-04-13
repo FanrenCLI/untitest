@@ -12,7 +12,7 @@ public interface UserMapper {
 
     List<UserInfo> userInfoQuery(@Param("req") UserInfoRequest req);
 
-    List<UserInfo> userInfoLeaderQuery(UserInfoRequest req);
+    List<UserInfo> userInfoLeaderQuery(@Param("req") UserInfoRequest req);
 
     Integer userInfoPartmentQuery(UserInfoRequest req);
 }
