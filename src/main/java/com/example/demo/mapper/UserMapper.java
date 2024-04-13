@@ -14,5 +14,5 @@ public interface UserMapper {
 
     List<UserInfo> userInfoLeaderQuery(@Param("req") UserInfoRequest req);
 
-    Integer userInfoPartmentQuery(UserInfoRequest req);
+    Integer userInfoPartmentQuery(@Param("req") UserInfoRequest req);
 }
