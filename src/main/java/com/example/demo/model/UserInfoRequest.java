@@ -30,4 +30,8 @@ public class UserInfoRequest {
      * 部门ID
      */
     private Integer partId;
+    /**
+     * 部门名称
+     */
+    private String partName;
 }
