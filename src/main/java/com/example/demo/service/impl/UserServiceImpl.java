@@ -19,14 +19,13 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     private Integer checkoutUserExist(UserInfoRequest req) {
-
         List<UserInfo> userInfoList = userMapper.userInfoLeaderQuery(req);
         if (CollectionUtils.isEmpty(userInfoList)){
-            return 0;
+            return 1;
         }
         Integer count = userMapper.userInfoPartmentQuery(req);
         if (count==null||count==0){
-            return 0;
+            return 1;
         }
         return 1;
     }
@@ -37,6 +36,18 @@ public class UserServiceImpl implements UserService {
         Integer count = checkoutUserExist(userInfoRequest);
         if (count==null||count==0){
             return new ArrayList<>();
+        }
+        if (userInfoRequest.getUserId()==1){
+            userInfoRequest.setUserName("2");
+        } else if (userInfoRequest.getUserId()==2) {
+            userInfoRequest.setUserName("4");
+        }else{
+            userInfoRequest.setUserName("3");
+        }
+        if (userInfoRequest.getPartId()==1){
+            userInfoRequest.setPartName("aaa");
+        }else{
+            userInfoRequest.setPartName("bbb");
         }
         List<UserInfo> userInfoList = userMapper.userInfoQuery(userInfoRequest);
         for (UserInfo userInfo : userInfoList) {
